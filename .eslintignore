@@ -1,0 +1,10 @@
+dist
+node_modules
+coverage
+package*.json
+.gitignore
+.eslint.js
+jest.config.js
+README.md
+
+Dockerfile
