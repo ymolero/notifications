@@ -33,7 +33,7 @@ describe('UserController', () => {
                 {
                     provide: UserService,
                     useValue: mockService,
-                }
+                },
             ],
         }).compile();
 
@@ -102,5 +102,4 @@ describe('UserController', () => {
             expect(true).toEqual(result);
         });
     });
-
 });
