@@ -42,27 +42,27 @@ describe('SancorService', () => {
     });
 
     it('should be defined', () => {
-        //expect(service).toBeDefined();
+        expect(service).toBeDefined();
     });
 
     describe('Unit Test Get User', () => {
         it('should call property method find in model', async () => {
             const spy = jest.spyOn(userModel, 'find');
             service.getUsers();
-            //expect(spy).toHaveBeenCalled();
+            expect(spy).toHaveBeenCalled();
             spy.mockClear();
         });
 
         it('should response data', async () => {
             const result = await service.getUsers();
-            //expect(mockResult).toMatchObject(result);
+            expect(mockResult).toMatchObject(result);
         });
     });
 
     describe('Unit Test Create User', () => {
         it('should response data', async () => {
             const result = await service.createUser(mockResult[0]);
-            //expect(mockResult[0]).toMatchObject(result);
+            expect(mockResult[0]).toMatchObject(result);
         });
     });
 
@@ -70,13 +70,13 @@ describe('SancorService', () => {
         it('should call property method find in model', async () => {
             const spy = jest.spyOn(userModel, 'deleteOne');
             service.deleteUser('123');
-            //expect(spy).toHaveBeenCalled();
+            expect(spy).toHaveBeenCalled();
             spy.mockClear();
         });
 
         it('should response data', async () => {
             const result = await service.deleteUser('123');
-            //expect(true).toEqual(result);
+            expect(true).toEqual(result);
         });
     });
 
@@ -84,13 +84,13 @@ describe('SancorService', () => {
         it('should call property method find in model', async () => {
             const spy = jest.spyOn(userModel, 'updateOne');
             service.updateUser('123', mockResult[0]);
-            //expect(spy).toHaveBeenCalled();
+            expect(spy).toHaveBeenCalled();
             spy.mockClear();
         });
 
         it('should response data', async () => {
             const result = await service.updateUser('123', mockResult[0]);
-            //expect(true).toEqual(result);
+            expect(true).toEqual(result);
         });
     });
 });
