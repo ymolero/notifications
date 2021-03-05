@@ -4,6 +4,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { SchemaUser } from 'src/user/infrastructure/user.schema';
 import { ApplicationModule } from 'src/user/application/application.module';
 import { Create } from 'src/user/application/create';
+import { MongodbRepository } from './mongodb.repository';
 
 @Module({
     imports: [
@@ -18,6 +19,15 @@ import { Create } from 'src/user/application/create';
         ]),
     ],
     controllers: [PostCreateUserController],
-    providers: [Create],
+    providers: [
+        {
+            Create,
+        },  
+        {
+            inject: [MongodbRepository],
+            provide: 'CreateUser',
+            useValue: (repository: MongodbRepository) => repository,
+        },
+    ],
 })
 export class InfrastructureModule {}
