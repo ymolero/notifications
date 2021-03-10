@@ -2,13 +2,13 @@ export class NameVO {
     private value: string;
 
     constructor(value: string) {
-        this.validateMaxLength(value);
+        this.validateMixLength(value);
         this.value = value;
     }
 
-    validateMaxLength(value: string): void {
-        if (value.length > 5) {
-            throw new Error('Validate Max Length');
+    validateMixLength(value: string): void {
+        if (value.length < 5) {
+            throw new Error('Validate Mix Length');
         }
     }
 

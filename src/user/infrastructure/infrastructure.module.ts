@@ -21,13 +21,11 @@ import { MongodbRepository } from './mongodb.repository';
     controllers: [PostCreateUserController],
     providers: [
         {
-            Create,
-        },  
-        {
             inject: [MongodbRepository],
             provide: 'CreateUser',
-            useValue: (repository: MongodbRepository) => repository,
+            useValue: (repository: MongodbRepository) => new Create(repository),
         },
     ],
+    exports: ['CreateUser'],
 })
 export class InfrastructureModule {}
