@@ -23,8 +23,9 @@ import { MongodbRepository } from './mongodb.repository';
         {
             inject: [MongodbRepository],
             provide: 'CreateUser',
-            useValue: (repository: MongodbRepository) => new Create(repository),
+            useFactory: (repository: MongodbRepository) => new Create(repository),
         },
+        MongodbRepository,
     ],
     exports: ['CreateUser'],
 })
