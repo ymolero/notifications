@@ -2,13 +2,13 @@ export class UserNameVO {
     private value: string;
 
     constructor(value: string) {
-        this.validateMixLength(value);
+        this.validateMinLength(value);
         this.value = value;
     }
 
-    validateMixLength(value: string): void {
+    validateMinLength(value: string): void {
         if (value.length < 5) {
-            throw new Error('Validate Mix Length');
+            throw new Error('Validate Min Length');
         }
     }
 
